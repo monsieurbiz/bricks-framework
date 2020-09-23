@@ -1,0 +1,21 @@
+<style>
+  body,
+  #root {
+    height: 100%;
+  }
+
+  #root {
+    padding: 1.6rem;
+    overflow-x: hidden;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const event = new Event('storyUpdated')
+    const observer = new MutationObserver(function () {
+      document.dispatchEvent(event)
+    })
+
+    observer.observe(document.querySelector('#root'), { childList: true })
+  })
+</script>

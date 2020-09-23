@@ -1,0 +1,31 @@
+{
+  "name": "ecommerce-frontend-framework",
+  "version": "0.0.1",
+  "description": "Frontend framework to build awesome interfaces for your next e-commerce project",
+  "scripts": {
+    "storybook": "start-storybook -p 6006 --ci --quiet",
+    "build-storybook": "build-storybook --quiet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monsieurbiz/ecommerce-frontend-framework.git"
+  },
+  "author": "Monsieur Biz <hello@monsieurbiz.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/monsieurbiz/ecommerce-frontend-framework/issues"
+  },
+  "homepage": "https://github.com/monsieurbiz/ecommerce-frontend-framework#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@storybook/addon-docs": "^6.0.21",
+    "@storybook/addon-viewport": "^6.0.21",
+    "@storybook/html": "^6.0.21",
+    "@storybook/preset-scss": "^1.0.2",
+    "@whitespace/storybook-addon-html": "^2.0.1",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.2"
+  }
+}
