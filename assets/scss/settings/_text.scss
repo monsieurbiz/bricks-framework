@@ -1,0 +1,41 @@
+//
+// Text
+// -----------------------------------------------------------------------------
+
+// Font sizes
+// -----------------------------------------------------------------------------
+
+$font-size-map: (
+  "xxs": 1.2rem,
+  "xs": 1.4rem,
+  "sm": 1.6rem,
+  "md": 1.8rem,
+  "lg": 2rem,
+  "xl": 2.2rem,
+  "2xl": 2.4rem,
+  "3xl": 2.6rem,
+  "4xl": 2.8rem,
+  "5xl": 3rem,
+  "6xl": 3.2rem,
+  "7xl": 4rem,
+  "8xl": 4.8rem,
+) !default;
+
+// Font families
+// -----------------------------------------------------------------------------
+
+$font-family-map: (
+  "sans": (system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"),
+  "serif": (Georgia, Cambria, "Times New Roman", Times, serif),
+  "monospace": (SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace)
+) !default;
+
+// Line height
+// -----------------------------------------------------------------------------
+
+$line-height-map: (
+  "none": 1,
+  "tight": 1.25,
+  "snug": 1.375,
+  "normal": 1.5
+) !default;

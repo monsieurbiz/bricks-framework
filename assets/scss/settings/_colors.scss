@@ -1,0 +1,31 @@
+//
+// Colors
+// -----------------------------------------------------------------------------
+
+$color-map: (
+  "bg": hsl(0, 0%, 100%),
+
+  "contrast-lower": hsl(0, 0%, 95%),
+  "contrast-low": hsl(0, 0%, 80%),
+  "contrast-medium": hsl(0, 0%, 40%),
+  "contrast-high": hsl(0, 0%, 20%),
+  "contrast-higher": hsl(0, 0%, 10%),
+
+  "primary": hsl(250, 68%, 58%),
+  "primary-light": hsl(250, 68%, 68%),
+  "primary-dark": hsl(250, 68%, 48%),
+
+  // Status
+  "info": hsl(219, 100%, 65%),
+  "success": hsl(116, 54%, 42%),
+  "warning": hsl(34, 100%, 50%),
+  "error": hsl(7, 70%, 50%),
+
+  // Networks
+  "facebook": hsl(221, 44%, 41%),
+  "instagram": hsl(207, 34%, 48%),
+  "twitter": hsl(196, 100%, 46%),
+  "linkedin": hsl(358, 79%, 45%),
+  "pinterest": hsl(199, 100%, 36%),
+  "youtube": hsl(358, 73%, 46%)
+) !default;

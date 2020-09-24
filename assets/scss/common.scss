@@ -4,6 +4,17 @@
 
 @charset "UTF-8";
 
+// Settings
+// --------------------------------------------------------------------------
+
+@import "settings/breakpoints";
+@import "settings/colors";
+@import "settings/heights";
+@import "settings/radius";
+@import "settings/spacers";
+@import "settings/text";
+@import "settings/widths";
+
 // Elements
 // --------------------------------------------------------------------------
 
