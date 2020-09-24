@@ -19,3 +19,8 @@ addParameters({
     hideEmpty: true,
   },
 })
+
+// Import assets
+
+// scss
+import '../assets/scss/common.scss'
