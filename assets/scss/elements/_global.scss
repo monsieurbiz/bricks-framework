@@ -1,0 +1,45 @@
+//
+// Global
+// -----------------------------------------------------------------------------
+
+// Page
+// -----------------------------------------------------------------------------
+
+html {
+  font-size: calc(1em * 0.625);
+}
+
+body {
+  color: var(--color-contrast-high);
+  font-size: var(--text-sm);
+  font-family: var(--font-sans);
+  line-height: var(--leading-normal);
+  background: var(--color-bg, white);
+}
+
+// Focus state
+// -----------------------------------------------------------------------------
+
+* {
+  &:focus {
+    outline: 1px dashed var(--color-contrast-low);
+    outline-offset: 0.15em;
+  }
+}
+
+// Selection
+// -----------------------------------------------------------------------------
+
+::selection {
+  color: var(--color-bg);
+  background-color: var(--color-primary);
+}
+
+// Animations
+// -----------------------------------------------------------------------------
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

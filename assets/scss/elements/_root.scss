@@ -1,0 +1,37 @@
+//
+// Root
+// -----------------------------------------------------------------------------
+
+:root {
+  @each $breakpoint-name, $breakpoint-value in $breakpoint-map {
+    --breakpoint-#{$breakpoint-name}: #{$breakpoint-value};
+  }
+
+  @each $max-width-name, $max-width-value in $max-width-map {
+    --max-w-#{$max-width-name}: #{$max-width-value};
+  }
+
+  @each $spacer-name, $spacer-value in $spacer-map {
+    --spacer-#{$spacer-name}: #{$spacer-value};
+  }
+
+  @each $color-name, $color-value in $color-map {
+    --color-#{$color-name}: #{$color-value};
+  }
+
+  @each $font-size-name, $font-size-value in $font-size-map {
+    --text-#{$font-size-name}: #{$font-size-value};
+  }
+
+  @each $font-family-name, $font-family-value in $font-family-map {
+    --font-#{$font-family-name}: #{$font-family-value};
+  }
+
+  @each $line-height-name, $line-height-value in $line-height-map {
+    --leading-#{$line-height-name}: #{$line-height-value};
+  }
+
+  @each $radius-name, $radius-value in $radius-map {
+    --radius-#{$radius-name}: #{$radius-value};
+  }
+}
