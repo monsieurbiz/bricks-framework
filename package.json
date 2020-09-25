@@ -4,7 +4,8 @@
   "description": "Frontend framework to build awesome interfaces for your next e-commerce project",
   "scripts": {
     "storybook": "start-storybook -p 6006 --ci --quiet",
-    "build-storybook": "build-storybook --quiet"
+    "build-storybook": "build-storybook --quiet",
+    "stylelint-check": "stylelint-config-prettier-check"
   },
   "repository": {
     "type": "git",
@@ -24,8 +25,15 @@
     "@storybook/preset-scss": "^1.0.2",
     "@whitespace/storybook-addon-html": "^2.0.1",
     "babel-loader": "^8.1.0",
-    "css-loader": "^3.5.2",
+    "css-loader": "^4.3.0",
     "node-sass": "^4.14.1",
-    "sass-loader": "^10.0.2"
+    "prettier": "2.1.2",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1",
+    "stylelint": "^13.7.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0"
   }
 }

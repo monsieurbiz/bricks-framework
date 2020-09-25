@@ -1,0 +1,35 @@
+{
+  "plugins": ["stylelint-order", "stylelint-scss"],
+  "extends": ["stylelint-config-rational-order"],
+  "defaultSeverity": "warning",
+  "rules": {
+    "max-nesting-depth": 4,
+    "order/order": [
+      "dollar-variables",
+      {
+        "type": "at-rule",
+        "name": "include",
+        "hasBlock": false
+      },
+      "custom-properties",
+      "declarations",
+      "rules",
+      {
+        "type": "at-rule",
+        "name": "include",
+        "hasBlock": true
+      }
+    ],
+    "order/properties-alphabetical-order": null,
+    "scss/at-extend-no-missing-placeholder": null,
+    "scss/dollar-variable-colon-space-after": null,
+    "scss/dollar-variable-colon-space-before": null,
+    "selector-class-pattern": null,
+    "selector-no-qualifying-type": [
+      true,
+      {
+        "ignore": ["attribute"]
+      }
+    ]
+  }
+}
