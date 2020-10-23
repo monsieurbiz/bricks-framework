@@ -22,3 +22,73 @@
     url("../../fonts/#{$font-path}/#{$font-file}.woff2") format("woff2"),
     url("../../fonts/#{$font-path}/#{$font-file}.woff") format("woff");
 }
+
+// Breakpoints
+// -----------------------------------------------------------------------------
+
+// Makes the @content apply to the given breakpoint and wider
+// No query for the smallest breakpoint
+@mixin breakpoint-up($name, $breakpoints: $breakpoint-map) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// Makes the @content apply to the given breakpoint and narrower
+// No query for the largest breakpoint
+@mixin breakpoint-down($name, $breakpoints: $breakpoint-map) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// Makes the @content apply between the min and max breakpoints
+@mixin breakpoint-between($lower, $upper, $breakpoints: $breakpoint-map) {
+  $min: breakpoint-min($lower, $breakpoints);
+  $max: breakpoint-max($upper, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include breakpoint-up($lower, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include breakpoint-down($upper, $breakpoints) {
+      @content;
+    }
+  }
+}
+
+// Makes the @content apply only to the given breakpoint only
+@mixin breakpoint-only($name, $breakpoints: $breakpoint-map) {
+  $min: breakpoint-min($name, $breakpoints);
+  $next: breakpoint-next($name, $breakpoints);
+  $max: breakpoint-max($next);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include breakpoint-up($name, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include breakpoint-down($next, $breakpoints) {
+      @content;
+    }
+  }
+}
