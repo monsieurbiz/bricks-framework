@@ -92,3 +92,68 @@
     }
   }
 }
+
+// Utilities generator
+// -----------------------------------------------------------------------------
+
+@mixin generate-utilities($utilities) {
+  @each $breakpoint in map-keys($breakpoint-map) {
+    // Generate media query if needed
+    @include breakpoint-up($breakpoint) {
+      $prefix: breakpoint-prefix($breakpoint, $breakpoint-map);
+
+      // Loop over each utility property
+      @each $key, $utility in $utilities {
+        // The utility can be disabled with `false`, thus check if the utility is a map first
+        // Only proceed if responsive media queries are enabled or if it's the base media query
+        @if type-of($utility) ==
+          "map" and
+          (map-get($utility, responsive) or $prefix == "")
+        {
+          @include generate-utilities-classes($utility, $prefix);
+        }
+      }
+    }
+  }
+}
+
+@mixin generate-utilities-classes($utility, $prefix) {
+  $values: map-get($utility, values);
+
+  // If the values are a list or string, convert it into a map
+  @if type-of($values) == "string" or type-of(nth($values, 1)) != "list" {
+    $values: zip($values, $values);
+  }
+
+  @each $key, $value in $values {
+    $properties: map-get($utility, property);
+
+    // Multiple properties are possible
+    @if type-of($properties) == "string" {
+      $properties: append((), $properties);
+    }
+
+    // Use custom class if present
+    $property-class: if(
+      map-has-key($utility, class),
+      map-get($utility, class),
+      nth($properties, 1)
+    );
+    $property-class: if($property-class == null, "", $property-class);
+
+    // Don't prefix if value key is null
+    $property-class-modifier: if(
+      $key,
+      if($property-class == "", "", "-") + $key,
+      ""
+    );
+
+    @if $value != null {
+      .#{$prefix + $property-class + $property-class-modifier} {
+        @each $property in $properties {
+          #{$property}: $value;
+        }
+      }
+    }
+  }
+}
