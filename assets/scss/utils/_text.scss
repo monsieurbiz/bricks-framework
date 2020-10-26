@@ -1,0 +1,80 @@
+//
+// Text utilities
+// -----------------------------------------------------------------------------
+
+$text-utilities: (
+  "font-weight": (
+    class: font,
+    property: font-weight,
+    values: (
+      "hairline": 100,
+      "thin": 200,
+      "light": 300,
+      "normal": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700,
+      "extrabold": 800,
+      "black": 900,
+    ),
+    responsive: true,
+  ),
+  "font-size": (
+    class: text,
+    property: font-size,
+    values: $font-size-map,
+    responsive: true,
+  ),
+  "font-family": (
+    class: font,
+    property: font-family,
+    values: $font-family-map,
+    responsive: true,
+  ),
+  "font-style": (
+    property: font-style,
+    class: font,
+    values: italic,
+  ),
+  "line-height": (
+    class: leading,
+    property: line-height,
+    values: $line-height-map,
+    responsive: true,
+  ),
+  "text-align": (
+    property: text-align,
+    class: text,
+    values: left right center justify,
+    responsive: true,
+  ),
+  "text-decoration": (
+    property: text-decoration,
+    class: null,
+    values: (
+      "underline": underline,
+      "line-through": line-through,
+      "no-decoration": none,
+    ),
+    responsive: true,
+  ),
+  "text-transform": (
+    property: text-transform,
+    class: null,
+    values: (
+      "lowercase": lowercase,
+      "uppercase": uppercase,
+      "capitalize": capitalize,
+      "no-transform": none,
+    ),
+    responsive: true,
+  ),
+  "white-space": (
+    property: white-space,
+    class: whitespace,
+    values: nowrap normal,
+    responsive: true,
+  ),
+);
+
+@include generate-utilities($text-utilities);
