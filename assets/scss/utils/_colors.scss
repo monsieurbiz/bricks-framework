@@ -1,0 +1,31 @@
+//
+// Colors utilities
+// -----------------------------------------------------------------------------
+
+$colors-utilities: (
+  "color": (
+    property: color,
+    class: text,
+    values:
+      map-merge(
+        $color-map,
+        (
+          "current": currentColor,
+        )
+      ),
+  ),
+  "background-color": (
+    property: background-color,
+    class: bg,
+    values:
+      map-merge(
+        $color-map,
+        (
+          "current": currentColor,
+          "transparent": transparent,
+        )
+      ),
+  ),
+);
+
+@include generate-utilities($colors-utilities);

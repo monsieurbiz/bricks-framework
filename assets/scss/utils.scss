@@ -8,6 +8,7 @@
 // --------------------------------------------------------------------------
 
 @import "settings/breakpoints";
+@import "settings/colors";
 @import "settings/spacers";
 
 // Tools
@@ -20,5 +21,6 @@
 // Utils
 // --------------------------------------------------------------------------
 
+@import "utils/colors";
 @import "utils/display";
 @import "utils/spacers";
