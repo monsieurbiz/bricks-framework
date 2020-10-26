@@ -1,0 +1,24 @@
+//
+// Widths utilities
+// -----------------------------------------------------------------------------
+
+$widths-utilities: (
+  "width": (
+    property: width,
+    class: w,
+    values:
+      map-merge(
+        $width-map,
+        (
+          "auto": auto,
+        )
+      ),
+  ),
+  "max-width": (
+    property: max-width,
+    class: max-w,
+    values: $max-width-map,
+  ),
+);
+
+@include generate-utilities($widths-utilities);
