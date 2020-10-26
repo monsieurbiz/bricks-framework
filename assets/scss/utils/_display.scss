@@ -1,0 +1,21 @@
+//
+// Display utilities
+// -----------------------------------------------------------------------------
+
+$display-utilities: (
+  "display": (
+    property: display,
+    class: null,
+    values: (
+      "inline": inline,
+      "inline-block": inline-block,
+      "block": block,
+      "inline-flex": inline-flex,
+      "flex": flex,
+      "hidden": none,
+    ),
+    responsive: true,
+  ),
+);
+
+@include generate-utilities($display-utilities);
