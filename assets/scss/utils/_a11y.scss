@@ -1,0 +1,8 @@
+//
+// A11y utilities
+// -----------------------------------------------------------------------------
+
+.visually-hidden,
+.visually-hidden-focusable:not(:focus) {
+  @extend %visually-hidden;
+}
