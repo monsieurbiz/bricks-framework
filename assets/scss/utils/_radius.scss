@@ -1,0 +1,14 @@
+//
+// Radius utilities
+// -----------------------------------------------------------------------------
+
+$radius-utilities: (
+  "border-radius": (
+    property: border-radius,
+    class: rounded,
+    values: $radius-map,
+    responsive: true,
+  ),
+);
+
+@include generate-utilities($radius-utilities);
