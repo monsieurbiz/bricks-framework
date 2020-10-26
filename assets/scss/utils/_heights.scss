@@ -1,0 +1,19 @@
+//
+// Heights utilities
+// -----------------------------------------------------------------------------
+
+$heights-utilities: (
+  "height": (
+    property: height,
+    class: h,
+    values:
+      map-merge(
+        $height-map,
+        (
+          "auto": auto,
+        )
+      ),
+  ),
+);
+
+@include generate-utilities($heights-utilities);
