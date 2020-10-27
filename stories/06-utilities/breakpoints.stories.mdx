@@ -1,0 +1,23 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+
+<Meta title="Utilities/Breakpoints" />
+
+# Breakpoints
+
+Utility classes will not be completely useful if it wasn't possible to update them according to the responsive breakpoints defined in the settings, so it's the case. When its' relevant, alongside your utility class you can specify the desired breakpoint for it to be applied.
+
+The goal is to maintain a mobile first approach when using the utility classes. So the breakpoints are all `min-width`.
+
+To use a utility class, starting form a specific breakpoint, add to the utility class the desired breakpoint identifier as a class prefix.
+
+With the default settings, this will be your reference:
+
+| Class prefix | Breakpoint |
+| :----------: | :--------: |
+|    `sm:`     |   ≥768px   |
+|    `md:`     |  ≥1024px   |
+|    `lg:`     |  ≥1280px   |
+
+Example usage: `w-full sm:w-1/2` -> width set to 100% by default and set to 50% above 768px.
+
+Not all the utility class can be used with those prefix, but most of them. It will be specified if an utility doesn't make use of these breakpoints prefix.
