@@ -1,0 +1,18 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+
+<Meta title="Helpers/Visually hidden" />
+
+# Visually hide content
+
+Use these helpers to visually hide elements but keep them accessible to assistive technologies.
+
+|            Class            |                                         Decription                                          |
+| :-------------------------: | :-----------------------------------------------------------------------------------------: |
+|      `visually-hidden`      |     hide content to all users, except those visiting your website using a screen reader     |
+| `visually-hidden-focusable` | hide content to all users, except when the content is focused, with the tab key for example |
+
+`visually-hidden` can be useful in situations where additional visual information or cues need to also be conveyed to non-visual users. The variant to this utility, `visually-hidden-focusable`, is useful to visually hide interactive controls, like the “skip” links.
+
+```html
+<a class="visually-hidden-focusable" href="#content">Skip to main content</a>
+```
