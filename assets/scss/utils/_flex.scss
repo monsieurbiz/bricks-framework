@@ -1,0 +1,49 @@
+//
+// Flex utilities
+// -----------------------------------------------------------------------------
+
+$flex-utilities: (
+  "flex": (
+    property: flex,
+    class: flex,
+    values: (
+      "1": 1 1 0%,
+      "auto": 1 1 auto,
+      "initial": 0 1 auto,
+      "none": none,
+    ),
+    responsive: true,
+  ),
+  "flex-direction": (
+    property: flex-direction,
+    class: flex,
+    values: row row-reverse column column-reverse,
+    responsive: true,
+  ),
+  "flex-grow": (
+    property: flex-grow,
+    class: flex-grow,
+    values: (
+      null: 1,
+      "0": 0,
+    ),
+    responsive: true,
+  ),
+  "flex-shrink": (
+    property: flex-shrink,
+    class: flex-shrink,
+    values: (
+      null: 1,
+      "0": 0,
+    ),
+    responsive: true,
+  ),
+  "flex-wrap": (
+    property: flex-wrap,
+    class: flex,
+    values: wrap nowrap wrap-reverse,
+    responsive: true,
+  ),
+);
+
+@include generate-utilities($flex-utilities);
