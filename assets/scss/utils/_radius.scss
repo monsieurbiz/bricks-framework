@@ -5,8 +5,38 @@
 $radius-utilities: (
   "border-radius": (
     property: border-radius,
-    class: rounded,
-    values: $radius-map,
+    class: radius,
+    values:
+      map-merge(
+        $radius-map,
+        (
+          "0": 0,
+        )
+      ),
+    responsive: true,
+  ),
+  "border-top-left-radius": (
+    property: border-top-left-radius,
+    class: radius-top-left,
+    values: 0,
+    responsive: true,
+  ),
+  "border-top-right-radius": (
+    property: border-top-right-radius,
+    class: radius-top-right,
+    values: 0,
+    responsive: true,
+  ),
+  "border-bottom-left-radius": (
+    property: border-bottom-left-radius,
+    class: radius-bottom-left,
+    values: 0,
+    responsive: true,
+  ),
+  "border-bottom-right-radius": (
+    property: border-bottom-right-radius,
+    class: radius-bottom-right,
+    values: 0,
     responsive: true,
   ),
 );
