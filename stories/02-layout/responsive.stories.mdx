@@ -1,0 +1,90 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+
+<Meta title="Layout/Responsive" />
+
+# Responsive
+
+Breakpoints are the triggers for how your layout responsive changes across viewport sizes. They are defined in the settings.
+
+Here's the list of the default breakpoints:
+
+| Breakpoint | Dimensions |
+| :--------: | :--------: |
+|    `sm`    |   768px    |
+|    `md`    |   1024px   |
+|    `lg`    |   1280px   |
+
+Although it is possible to use media queries to target different viewports, mobile first responsive design is the goal. Start with the basics and use them to adjust the design for larger devices as much as possible.
+
+## Media queries
+
+Comme nous utilisons Sass pour écrire nos styles css, plusieurs mixins sont disponibles en lieu et place des media queries. Cela dans le but de simplifier l'écriture vis-à-vis des media queries.
+
+### Min-width
+
+```scss
+// Pass the name of the breakpoint as an argument of the mixin
+@include breakpoint-up(sm) { ... }
+
+// Usage
+
+// Example: Hide by default, and then show starting from the `sm` breakpoint
+.custom-class {
+  display: none;
+}
+
+@include breakpoint-up(sm) {
+  .custom-class {
+    display: block;
+  }
+}
+```
+
+### Max-width
+
+Occasionally it will be more efficient to use media queries that go in the other direction.
+
+```scss
+// Pass the name of the breakpoint as an argument of the mixin
+@include breakpoint-down(sm) { ... }
+
+// Usage
+
+// Example: Hide the element from the `sm` breakpoint and down
+@include breakpoint-down(sm) {
+  .custom-class {
+    display: block;
+  }
+}
+```
+
+This mixin take the declared breakpoints and subtract 0.02px from them, and use them as our max-width values.
+
+### Single breakpoint
+
+This is for targeting a single segment of screen sizes using the minimum and maximum breakpoint widths.
+
+```scss
+// Pass the name of the breakpoint as an argument of the mixin
+@include breakpoint-only(sm) { ... }
+```
+
+With the defaults breakpoints settings, this will result in:
+
+```scss
+@media (min-width: 768px) and (max-width: 1023.98px) { ... }
+```
+
+### Between breakpoints
+
+Similarly, you can span multiple breakpoint widths:
+
+```scss
+@include breakpoint-between(sm, lg) { ... }
+```
+
+With the defaults breakpoints settings, this will result in:
+
+```scss
+@media (min-width: 768px) and (max-width: 1279.98px) { ... }
+```
