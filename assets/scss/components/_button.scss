@@ -1,0 +1,102 @@
+//
+// Button
+// -----------------------------------------------------------------------------
+
+.btn {
+  --btn-padding-y: var(--spacer-xs);
+  --btn-padding-x: var(--spacer-xl);
+  --btn-color: var(--color-bg);
+  --btn-font-weight: var(--font-normal);
+  --btn-font-size: inherit;
+  --btn-background-color: var(--color-primary);
+  --btn-border-color: var(--btn-background-color);
+  --btn-border-radius: var(--radius-sm);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  color: var(--btn-color);
+  font-weight: var(--btn-font-weight);
+  font-size: var(--btn-font-size);
+  font-family: inherit;
+  line-height: var(--leading-tight);
+  text-decoration: none;
+  vertical-align: top;
+  background: var(--btn-background-color);
+  border: 1px solid var(--btn-border-color);
+  border-radius: var(--btn-border-radius);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  transition-duration: 0.2s, 0.3s, 0.3s;
+  transition-property: color, background-color, border-color;
+
+  &:focus,
+  &:hover {
+    --btn-background-color: var(--color-primary-dark);
+
+    color: var(--btn-color);
+  }
+
+  &:active {
+    --btn-border-color: var(--color-primary-light);
+
+    transform: translateY(1px);
+  }
+
+  &[disabled] {
+    opacity: 0.65;
+    pointer-events: none;
+  }
+
+  &.--loading {
+    pointer-events: none;
+
+    &::after {
+      width: 1.1em;
+      height: 1.1em;
+      margin: 0 0 0 var(--spacer-xs);
+      border: 0.2em solid var(--btn-color);
+      border-top-color: var(--btn-background-color);
+      border-radius: var(--radius-circle);
+      animation: spin 1s ease-in-out infinite;
+      content: "";
+    }
+  }
+}
+
+// Reversed variant
+// -----------------------------------------------------------------------------
+
+.btn--reversed {
+  --btn-color: var(--color-primary);
+  --btn-background-color: var(--color-bg);
+  --btn-border-color: var(--color-primary);
+
+  &:focus,
+  &:hover {
+    --btn-color: var(--color-primary-dark);
+    --btn-background-color: var(--color-bg);
+    --btn-border-color: var(--color-primary-dark);
+  }
+}
+
+// Link variant
+// -----------------------------------------------------------------------------
+
+.btn--link {
+  text-decoration: underline;
+
+  &,
+  &:focus,
+  &:hover {
+    --btn-color: var(--color-primary);
+    --btn-background-color: transparent;
+    --btn-border-color: transparent;
+  }
+
+  &:focus,
+  &:hover {
+    --btn-color: var(--color-primary-dark);
+  }
+}
