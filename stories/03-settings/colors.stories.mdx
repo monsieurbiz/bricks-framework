@@ -1,0 +1,111 @@
+import { ColorPalette, ColorItem, Meta } from "@storybook/addon-docs/blocks"
+import { color } from "../00-shared/styles"
+
+<Meta title="Settings/Colors" />
+
+# Colors
+
+All colors are css variables that can be used as such in (s)css files (`--color-{color-value}`) and there are also utility classes generated with the pattern `text-{color-value}` for text color or `bg-{color-value}` for background color.
+
+## Main colors
+
+They can be defined as the "brand" colors.
+
+<ColorPalette>
+  <ColorItem title="Primary" subtitle="primary" colors={[color.primary.base]} />
+  <ColorItem
+    title="Primary light"
+    subtitle="primary-light"
+    colors={[color.primary.light]}
+  />
+  <ColorItem
+    title="Primary dark"
+    subtitle="primary-dark"
+    colors={[color.primary.dark]}
+  />
+</ColorPalette>
+
+## Contrast colors
+
+The contrast colors are used to define a scale of neutral colors.
+
+<ColorPalette>
+  <ColorItem title="Background" subtitle="bg" colors={[color.bg]} />
+  <ColorItem
+    title="Contrast lower"
+    subtitle="contrast-lower"
+    colors={[color.contrast.lower]}
+  />
+  <ColorItem
+    title="Contrast low"
+    subtitle="contrast-low"
+    colors={[color.contrast.low]}
+  />
+  <ColorItem
+    title="Contrast medium"
+    subtitle="contrast-medium"
+    colors={[color.contrast.medium]}
+  />
+  <ColorItem
+    title="Contrast high"
+    subtitle="contrast-high"
+    colors={[color.contrast.high]}
+  />
+  <ColorItem
+    title="Contrast higher"
+    subtitle="contrast-higher"
+    colors={[color.contrast.higher]}
+  />
+</ColorPalette>
+
+## Status colors
+
+<ColorPalette>
+  <ColorItem title="Info" subtitle="info" colors={[color.status.info]} />
+  <ColorItem
+    title="Success"
+    subtitle="success"
+    colors={[color.status.success]}
+  />
+  <ColorItem
+    title="Warning"
+    subtitle="warning"
+    colors={[color.status.warning]}
+  />
+  <ColorItem title="Error" subtitle="error" colors={[color.status.error]} />
+</ColorPalette>
+
+## Networks colors
+
+<ColorPalette>
+  <ColorItem
+    title="Facebook"
+    subtitle="facebook"
+    colors={[color.networks.facebook]}
+  />
+  <ColorItem
+    title="Instagram"
+    subtitle="instagram"
+    colors={[color.networks.instagram]}
+  />
+  <ColorItem
+    title="Twitter"
+    subtitle="twitter"
+    colors={[color.networks.twitter]}
+  />
+  <ColorItem
+    title="Linkedin"
+    subtitle="linkedin"
+    colors={[color.networks.linkedin]}
+  />
+  <ColorItem
+    title="Pinterest"
+    subtitle="pinterest"
+    colors={[color.networks.pinterest]}
+  />
+  <ColorItem
+    title="Youtube"
+    subtitle="youtube"
+    colors={[color.networks.youtube]}
+  />
+</ColorPalette>
