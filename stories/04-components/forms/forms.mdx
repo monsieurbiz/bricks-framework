@@ -1,0 +1,23 @@
+# Forms
+
+Forms allow you to styles the most common form controls.
+
+like `<input type="text">`, `<textarea>` and `<select>`.
+
+## Form label
+
+`<label>`s can be styled with the `form-label` class. Utility classes can also allow to customize depending on the situation.
+
+## Form control
+
+`<textarea>`s and `<input>`s with text like types can be styled with the `form-control` class. You can apply the `readonly` boolean attribute on an input to prevent modification of the input’s value, or the `disabled`, also boolean attribute. They will appear lighter.
+
+## Form select
+
+`<select>` can be styled with the `form-select` class, custom styles are limited to the `<select>`’s initial appearance and cannot modify the `<option>`s due to browser limitations. The `multiple` attribute is also supported.
+
+## Form check
+
+Checkbox and radio inputs can be styled with `form-check`, a series of classes for both input types and thier related labels.
+
+Structurally, `<input>`s and `<label>`s are sibling elements as opposed to an `<input>` within a `<label>`. This is slightly more verbose as you must specify id and for attributes to relate the `<input>` and `<label>`. This is because of the use of the sibling selector (`~`) for all our `<input>` states, like `:checked` or `:disabled`. When combined with the `form-check__label` class, we can easily style the text for each item based on the `<input>`’s state.
