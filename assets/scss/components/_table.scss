@@ -1,0 +1,132 @@
+//
+// Table
+// -----------------------------------------------------------------------------
+
+.table {
+  --table-accent-bg: transparent;
+
+  width: 100%;
+  vertical-align: top;
+  background: transparent;
+  border-color: var(--color-contrast-low);
+
+  tr,
+  th,
+  td {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+  }
+
+  > :not(caption) > * > * {
+    padding: var(--spacer-xs);
+    background-color: var(--table-accent-bg);
+    border-bottom-width: 1px;
+  }
+
+  > tbody {
+    vertical-align: inherit;
+  }
+
+  > thead {
+    vertical-align: bottom;
+  }
+
+  > :not(:last-child) > :last-child > * {
+    border-bottom-color: currentColor;
+  }
+}
+
+// Sortable
+// -----------------------------------------------------------------------------
+
+.table__sortable {
+  a {
+    position: relative;
+    display: block;
+    padding: 0 var(--spacer-sm) 0 0;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: calc(50% - 0.4rem);
+      right: 0;
+      width: 0.6rem;
+      height: 0.6rem;
+      background: transparent;
+      border: 1px solid var(--color-contrast-low);
+      border-width: 1px 0 0 1px;
+      transform: rotate(45deg);
+      transition: border-color 0.2s;
+      content: "";
+    }
+
+    &::after {
+      top: 50%;
+      border-width: 0 1px 1px 0;
+    }
+
+    &:focus,
+    &:hover {
+      &::before,
+      &::after {
+        border-color: var(--color-contrast-medium);
+      }
+    }
+  }
+}
+
+.table__sortable--ascending {
+  a {
+    &::before {
+      border-color: var(--color-contrast-medium);
+    }
+  }
+}
+
+.table__sortable--descending {
+  a {
+    &::after {
+      border-color: var(--color-contrast-medium);
+    }
+  }
+}
+
+// Bordered variant
+// -----------------------------------------------------------------------------
+
+.table--bordered {
+  > :not(caption) > * {
+    border-width: 1px 0;
+
+    > * {
+      border-width: 0 1px;
+    }
+  }
+}
+
+// Borderless variant
+// -----------------------------------------------------------------------------
+
+.table--borderless {
+  > :not(caption) > * > * {
+    border-bottom-width: 0;
+  }
+}
+
+// Striped variant
+// -----------------------------------------------------------------------------
+
+.table--striped {
+  > tbody > tr:nth-of-type(odd) {
+    --table-accent-bg: var(--color-contrast-lower);
+  }
+}
+
+// Responsive container
+// -----------------------------------------------------------------------------
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
