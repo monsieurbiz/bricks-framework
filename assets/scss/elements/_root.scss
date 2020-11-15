@@ -11,8 +11,8 @@
     --max-w-#{$max-width-name}: #{$max-width-value};
   }
 
-  @each $spacer-name, $spacer-value in $spacer-map {
-    --spacer-#{$spacer-name}: #{$spacer-value};
+  @each $space-name, $space-value in $spacing-map {
+    --space-#{$space-name}: #{$space-value};
   }
 
   @each $color-name, $color-value in $color-map {

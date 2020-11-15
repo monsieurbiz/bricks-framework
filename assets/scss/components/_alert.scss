@@ -7,8 +7,8 @@
   --alert-color-background: var(--color-primary);
   --alert-color-border: var(--alert-color-background);
 
-  margin: var(--spacer-sm) 0;
-  padding: var(--spacer-xs) var(--spacer-sm);
+  margin: var(--space-sm) 0;
+  padding: var(--space-xs) var(--space-sm);
   color: var(--alert-color-text);
   background: var(--alert-color-background);
   border: 1px solid var(--alert-color-border);
@@ -16,7 +16,7 @@
 
   p {
     &:not(:last-child) {
-      margin-bottom: var(--spacer-xs);
+      margin-bottom: var(--space-xs);
     }
   }
 }

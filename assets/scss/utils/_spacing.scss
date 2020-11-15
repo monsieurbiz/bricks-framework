@@ -1,14 +1,14 @@
 //
-// Spacers
+// Spacing
 // -----------------------------------------------------------------------------
 
-$spacers-utilities: (
+$spacing-utilities: (
   "margin": (
     class: m,
     property: margin,
     values:
       map-merge(
-        $spacer-map,
+        $spacing-map,
         (
           "auto": auto,
         )
@@ -20,7 +20,7 @@ $spacers-utilities: (
     property: margin-top,
     values:
       map-merge(
-        $spacer-map,
+        $spacing-map,
         (
           "auto": auto,
         )
@@ -32,7 +32,7 @@ $spacers-utilities: (
     property: margin-right,
     values:
       map-merge(
-        $spacer-map,
+        $spacing-map,
         (
           "auto": auto,
         )
@@ -44,7 +44,7 @@ $spacers-utilities: (
     property: margin-bottom,
     values:
       map-merge(
-        $spacer-map,
+        $spacing-map,
         (
           "auto": auto,
         )
@@ -56,7 +56,7 @@ $spacers-utilities: (
     property: margin-left,
     values:
       map-merge(
-        $spacer-map,
+        $spacing-map,
         (
           "auto": auto,
         )
@@ -66,51 +66,51 @@ $spacers-utilities: (
   "padding": (
     class: p,
     property: padding,
-    values: $spacer-map,
+    values: $spacing-map,
     responsive: true,
   ),
   "padding-top": (
     class: pt,
     property: padding-top,
-    values: $spacer-map,
+    values: $spacing-map,
     responsive: true,
   ),
   "padding-right": (
     class: pr,
     property: padding-right,
-    values: $spacer-map,
+    values: $spacing-map,
     responsive: true,
   ),
   "padding-bottom": (
     class: pb,
     property: padding-bottom,
-    values: $spacer-map,
+    values: $spacing-map,
     responsive: true,
   ),
   "padding-left": (
     class: pl,
     property: padding-left,
-    values: $spacer-map,
+    values: $spacing-map,
     responsive: true,
   ),
   "gap": (
     class: gap,
     property: gap,
-    values: $spacer-map,
+    values: $spacing-map,
     responsive: true,
   ),
   "row-gap": (
     class: gap-y,
     property: row-gap,
-    values: $spacer-map,
+    values: $spacing-map,
     responsive: true,
   ),
   "column-gap": (
     class: gap-x,
     property: column-gap,
-    values: $spacer-map,
+    values: $spacing-map,
     responsive: true,
   ),
 );
 
-@include generate-utilities($spacers-utilities);
+@include generate-utilities($spacing-utilities);

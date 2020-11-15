@@ -7,7 +7,7 @@
 
 .form-label {
   display: inline-block;
-  padding: 0 0 var(--spacer-xs);
+  padding: 0 0 var(--space-xs);
   font-size: var(--text-xs);
   line-height: var(leading-tight);
   vertical-align: top;
@@ -17,8 +17,8 @@
 // -----------------------------------------------------------------------------
 
 .form-control {
-  --form-control-padding-y: var(--spacer-xs);
-  --form-control-padding-x: calc(var(--spacer-xs) + var(--spacer-xxs));
+  --form-control-padding-y: var(--space-xs);
+  --form-control-padding-x: calc(var(--space-xs) + var(--space-xxs));
 
   display: block;
   width: 100%;
@@ -62,7 +62,7 @@
 .form-select {
   @extend .form-control;
 
-  padding-right: var(--spacer-xl);
+  padding-right: var(--space-xl);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='hsl(0, 0%25, 30%25)' viewBox='0 0 12 7'%3E%3Cpath d='M.67 1c0-.17.06-.34.2-.47a.67.67 0 0 1 .94 0l4 4c.1.1.27.1.38 0l4-4a.67.67 0 0 1 .95.94L6.47 6.14a.67.67 0 0 1-.94 0L.86 1.47A.67.67 0 0 1 .66 1'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
   background-position: calc(100% - var(--form-control-padding-x))
@@ -87,7 +87,7 @@
   display: inline-block;
   width: 1.6rem;
   height: 1.6rem;
-  margin: 0.425rem var(--spacer-xs) 0 0;
+  margin: 0.425rem var(--space-xs) 0 0;
   vertical-align: top;
   background-color: var(--color-bg);
   background-repeat: no-repeat;

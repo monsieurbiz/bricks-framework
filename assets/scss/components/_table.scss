@@ -19,7 +19,7 @@
   }
 
   > :not(caption) > * > * {
-    padding: var(--spacer-xs);
+    padding: var(--space-xs);
     background-color: var(--table-accent-bg);
     border-bottom-width: 1px;
   }
@@ -44,7 +44,7 @@
   a {
     position: relative;
     display: block;
-    padding: 0 var(--spacer-sm) 0 0;
+    padding: 0 var(--space-sm) 0 0;
 
     &::before,
     &::after {
