@@ -1,0 +1,18 @@
+//
+// Box
+// -----------------------------------------------------------------------------
+
+.box {
+  padding: var(--space-sm);
+  background-color: var(--color-bg);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px 0 hsla(0, 0%, 0%, 0.1);
+}
+
+// Bordered
+// -----------------------------------------------------------------------------
+
+.box--bordered {
+  border: 1px solid var(--color-contrast-low);
+  box-shadow: none;
+}

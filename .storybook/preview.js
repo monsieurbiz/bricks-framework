@@ -25,4 +25,5 @@ addParameters({
 // scss
 import '../assets/scss/common.scss'
 import '../assets/scss/components.scss'
+import '../assets/scss/objects.scss'
 import '../assets/scss/utils.scss'
