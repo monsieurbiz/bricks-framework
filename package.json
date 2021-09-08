@@ -1,5 +1,5 @@
 {
-  "name": "ecommerce-frontend-framework",
+  "name": "bricks-framework",
   "version": "1.0.0",
   "description": "Frontend framework to build awesome interfaces for your next e-commerce project",
 
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manonlvnr/bricks-framework.git"
+    "url": "git+https://github.com/monsieurbiz/bricks-framework.git"
   },
   "author": "Monsieur Biz <hello@monsieurbiz.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/manonlvnr/bricks-framework/issues"
+    "url": "https://github.com/monsieurbiz/bricks-framework/issues"
   },
-  "homepage": "https://github.com/manonlvnr/bricks-framework#readme",
+  "homepage": "https://github.com/monsieurbiz/bricks-framework#readme",
   "devDependencies": {
     "prettier": "2.3.2",
     "stylelint": "^13.13.1",
