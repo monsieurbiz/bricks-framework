@@ -8,7 +8,7 @@
   width: 100%;
   vertical-align: top;
   background: transparent;
-  border-color: var(--color-contrast-low);
+  border-color: var(--color-contrast-300);
 
   tr,
   th,
@@ -54,7 +54,7 @@
       width: 0.6rem;
       height: 0.6rem;
       background: transparent;
-      border: 1px solid var(--color-contrast-low);
+      border: 1px solid var(--color-contrast-300);
       border-width: 1px 0 0 1px;
       transform: rotate(45deg);
       transition: border-color 0.2s;
@@ -70,7 +70,7 @@
     &:hover {
       &::before,
       &::after {
-        border-color: var(--color-contrast-medium);
+        border-color: var(--color-contrast-500);
       }
     }
   }
@@ -79,7 +79,7 @@
 .table__sortable--ascending {
   a {
     &::before {
-      border-color: var(--color-contrast-medium);
+      border-color: var(--color-contrast-500);
     }
   }
 }
@@ -87,7 +87,7 @@
 .table__sortable--descending {
   a {
     &::after {
-      border-color: var(--color-contrast-medium);
+      border-color: var(--color-contrast-500);
     }
   }
 }
@@ -119,7 +119,7 @@
 
 .table--striped {
   > tbody > tr:nth-of-type(odd) {
-    --table-accent-bg: var(--color-contrast-lower);
+    --table-accent-bg: var(--color-contrast-100);
   }
 }
 

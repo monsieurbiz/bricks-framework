@@ -3,8 +3,8 @@
 // -----------------------------------------------------------------------------
 
 .alert {
-  --alert-color-text: var(--color-bg);
-  --alert-color-background: var(--color-primary);
+  --alert-color-text: var(--color-contrast-0);
+  --alert-color-background: var(--color-primary-500);
   --alert-color-border: var(--alert-color-background);
 
   margin: var(--space-sm) 0;
