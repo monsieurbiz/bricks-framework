@@ -10,20 +10,24 @@ html {
 }
 
 body {
-  color: var(--color-contrast-900);
-  font-size: var(--text-sm);
-  font-family: var(--font-sans);
-  line-height: var(--leading-normal);
-  background: var(--color-contrast-0, white);
+  color: var(--body-text-color, var(--color-contrast-900));
+  font-size: var(--body-text-size, var(--text-sm));
+  font-family: var(--body-font-family, var(--font-sans));
+  line-height: var(--body-leading, var(--leading-normal));
+  background: var(--body-background-color, var(--color-contrast-0));
 }
 
 // Focus state
 // -----------------------------------------------------------------------------
 
 * {
-  &:focus {
-    outline: 1px dashed var(--color-contrast-300);
-    outline-offset: 0.15em;
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
+
+  &:focus-visible {
+    outline: var(--focus-outline, 1px dashed var(--color-contrast-300));
+    outline-offset: var(--focus-outline-offset, 0.15em);
   }
 }
 
@@ -31,8 +35,8 @@ body {
 // -----------------------------------------------------------------------------
 
 ::selection {
-  color: var(--color-contrast-0);
-  background-color: var(--color-primary-500);
+  color: var(--selection-text-color, var(--color-contrast-0));
+  background-color: var(--selection-background-color, var(--color-primary-500));
 }
 
 // Animations
