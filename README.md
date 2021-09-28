@@ -9,19 +9,21 @@
 [![Bricks framework license](https://img.shields.io/github/license/monsieurbiz/bricks-framework?public)](https://github.com/monsieurbiz/bricks-framework/blob/master/LICENSE)
 [![GitHub Super-Linter](https://github.com/monsieurbiz/bricks-framework/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/monsieurbiz/bricks-framework/actions?query=workflow%3A%22Lint+Code+Base%22)
 
-Bricks is a frontend framework to build awesome interfaces for your next e-commerce project. It is currently used at [Monsieur Biz](https://monsieurbiz.com/) to build our projects.
+Bricks is a frontend framework providing good complementarity between components and utility classes. It's currently used at [Monsieur Biz](https://monsieurbiz.com/) to build our projects.
 
-[Storybook](https://storybook.js.org/) is used to present the documentation and components. You can visualize it at [monsieurbiz.com/bricks-framework](https://monsieurbiz.com/bricks-framework/)
+## Build locally
 
-![Storybook canvas and corresponding css code of a component](https://user-images.githubusercontent.com/713839/102231177-f98ef900-3eed-11eb-8969-88d643df4f79.png)
-
-## Installation
-
-Use the following commands to visualize locally:
+Use the following commands to build locally:
 
 ```shell
 npm install
-npm run storybook
+npm run buildSass
+```
+
+You can also watch for changes with this command:
+
+```shell
+npm run watchSass
 ```
 
 ## How it works
@@ -30,7 +32,7 @@ Very basic right now, it will evolve continuously. The main philosophy of the fr
 
 ### Styles
 
-[Sass](https://sass-lang.com/) is used to write the styles.
+The styles in this framework take advantage of [Sass](https://sass-lang.com/) and [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties).
 
 #### Architecture
 
