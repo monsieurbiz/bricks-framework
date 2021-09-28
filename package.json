@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Frontend framework to build awesome interfaces for your next e-commerce project",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "buildSass": "sass assets/scss/bricks.scss:css/bricks.css --style=compressed --no-source-map",
+    "watchSass": "sass assets/scss/bricks.scss:css/bricks.css --style=compressed --no-source-map --watch"
   },
   "repository": {
     "type": "git",
