@@ -1,5 +1,4 @@
 # npm
 node_modules
-# Storybook.js
-/storybook
-/storybook-static
+# compiled css
+css
