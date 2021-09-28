@@ -21,7 +21,11 @@ body {
 // -----------------------------------------------------------------------------
 
 * {
-  &:focus {
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
+
+  &:focus-visible {
     outline: var(--focus-outline, 1px dashed var(--color-contrast-300));
     outline-offset: var(--focus-outline-offset, 0.15em);
   }
