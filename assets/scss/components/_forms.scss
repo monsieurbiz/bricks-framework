@@ -26,25 +26,25 @@
   color: inherit;
   font: inherit;
   line-height: var(--leading-tight);
-  background: var(--color-bg);
-  border: 1px solid var(--color-contrast-low);
+  background: var(--color-contrast-0);
+  border: 1px solid var(--color-contrast-300);
   border-radius: var(--radius-sm);
   transition: border-color 0.2s ease-in-out;
   appearance: none;
 
   &::placeholder {
-    color: var(--color-contrast-low);
+    color: var(--color-contrast-300);
   }
 
   &:focus {
-    border-color: var(--color-primary);
+    border-color: var(--color-primary-500);
     outline: 0;
   }
 
   &:disabled,
   &[readonly] {
-    background-color: var(--color-contrast-lower);
-    // border-color: var(--color-contrast-low);
+    background-color: var(--color-contrast-100);
+    // border-color: var(--color-contrast-300);
   }
 
   &:disabled {
@@ -89,11 +89,11 @@
   height: 1.6rem;
   margin: 0.425rem var(--space-xs) 0 0;
   vertical-align: top;
-  background-color: var(--color-bg);
+  background-color: var(--color-contrast-0);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  border: 1px solid var(--color-contrast-low);
+  border: 1px solid var(--color-contrast-300);
   border-radius: var(--radius-sm);
   appearance: none;
 
@@ -102,7 +102,7 @@
   }
 
   &:focus {
-    border-color: var(--color-primary);
+    border-color: var(--color-primary-500);
     outline: 0;
   }
 
@@ -111,8 +111,8 @@
   }
 
   &:checked {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
+    background-color: var(--color-primary-500);
+    border-color: var(--color-primary-500);
 
     &[type="checkbox"] {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
@@ -125,9 +125,9 @@
 
   &:indeterminate {
     &[type="checkbox"] {
-      background-color: var(--color-primary);
+      background-color: var(--color-primary-500);
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
-      border-color: var(--color-primary);
+      border-color: var(--color-primary-500);
     }
   }
 
