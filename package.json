@@ -2,7 +2,6 @@
   "name": "@monsieurbiz/bricks-framework",
   "version": "1.0.0",
   "description": "Frontend framework to build awesome interfaces for your next e-commerce project",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,12 +16,13 @@
   },
   "homepage": "https://github.com/monsieurbiz/bricks-framework#readme",
   "devDependencies": {
-    "prettier": "2.3.2",
+    "prettier": "2.4.1",
+    "sass": "^1.42.1",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-rational-order-fix": "^0.1.8",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0",
-    "stylelint-scss": "^3.20.1"
+    "stylelint-scss": "^3.21.0"
   }
 }
