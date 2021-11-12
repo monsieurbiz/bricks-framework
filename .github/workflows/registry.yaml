@@ -1,0 +1,33 @@
+name: Github npm Registry
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup node and GPR auth
+        uses: actions/setup-node@v2
+        with:
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@monsieurbiz'
+          node-version: '14'
+
+      - name: Copy generated .npmrc
+        run: cp $NPM_CONFIG_USERCONFIG ~/.npmrc
+
+      - name: Install deps
+        run: npm install
+
+      - name: Publish
+        run: npm publish
