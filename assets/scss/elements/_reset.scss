@@ -2,38 +2,11 @@
 // Reset
 // -----------------------------------------------------------------------------
 
-html,
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ol,
-ul,
-li,
-dl,
-dt,
-dd,
-hr,
-pre,
-blockquote,
-figure,
-fieldset,
-legend,
-textarea,
-iframe {
-  margin: 0;
-  padding: 0;
-}
-
-button,
-input,
-select,
-textarea {
-  margin: 0;
+// remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+// the "symbol *" part is to solve Firefox SVG sprite bug
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
 }
 
 // Document
@@ -42,33 +15,13 @@ textarea {
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
-}
-
-html {
   box-sizing: border-box;
-}
-
-iframe {
-  border: 0;
-}
-
-// Headings
-// -----------------------------------------------------------------------------
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-  font-weight: normal;
 }
 
 // Lists
 // -----------------------------------------------------------------------------
 
+ol,
 ul {
   list-style: none;
 }
@@ -78,7 +31,6 @@ ul {
 
 img,
 video {
-  height: auto;
   max-width: 100%;
 }
 
@@ -87,15 +39,12 @@ video {
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
 }
 
-td,
-th {
-  padding: 0;
-}
+// Forms
+// -----------------------------------------------------------------------------
 
-td:not([align]),
-th:not([align]) {
-  text-align: left;
+// revert the 'white-space' property for textarea elements on Safari
+textarea {
+  white-space: revert;
 }
