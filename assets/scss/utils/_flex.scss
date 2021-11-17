@@ -2,6 +2,12 @@
 // Flex utilities
 // -----------------------------------------------------------------------------
 
+@use "../settings" as *;
+@use "../tools" as *;
+
+// Flex properties map
+// -----------------------------------------------------------------------------
+
 $flex-utilities: (
   "flex": (
     property: flex,
@@ -45,5 +51,8 @@ $flex-utilities: (
     responsive: true,
   ),
 );
+
+// Generate utilities
+// -----------------------------------------------------------------------------
 
 @include generate-utilities($flex-utilities);

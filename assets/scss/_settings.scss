@@ -2,10 +2,10 @@
 // Settings
 // --------------------------------------------------------------------------
 
-@import "settings/breakpoints";
-@import "settings/colors";
-@import "settings/heights";
-@import "settings/radius";
-@import "settings/spacing";
-@import "settings/text";
-@import "settings/widths";
+@forward "settings/breakpoints";
+@forward "settings/colors";
+@forward "settings/heights";
+@forward "settings/radius";
+@forward "settings/spacing";
+@forward "settings/text";
+@forward "settings/widths";

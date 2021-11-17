@@ -2,6 +2,12 @@
 // Display utilities
 // -----------------------------------------------------------------------------
 
+@use "../settings" as *;
+@use "../tools" as *;
+
+// Display properties map
+// -----------------------------------------------------------------------------
+
 $display-utilities: (
   "display": (
     property: display,
@@ -19,5 +25,8 @@ $display-utilities: (
     responsive: true,
   ),
 );
+
+// Generate utilities
+// -----------------------------------------------------------------------------
 
 @include generate-utilities($display-utilities);

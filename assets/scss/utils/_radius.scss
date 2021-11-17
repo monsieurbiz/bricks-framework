@@ -2,6 +2,12 @@
 // Radius utilities
 // -----------------------------------------------------------------------------
 
+@use "../settings" as *;
+@use "../tools" as *;
+
+// Radius properties map
+// -----------------------------------------------------------------------------
+
 $radius-utilities: (
   "border-radius": (
     property: border-radius,
@@ -40,5 +46,8 @@ $radius-utilities: (
     responsive: true,
   ),
 );
+
+// Generate utilities
+// -----------------------------------------------------------------------------
 
 @include generate-utilities($radius-utilities);

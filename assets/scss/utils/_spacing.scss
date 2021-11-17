@@ -2,6 +2,12 @@
 // Spacing
 // -----------------------------------------------------------------------------
 
+@use "../settings" as *;
+@use "../tools" as *;
+
+// Spacing properties map
+// -----------------------------------------------------------------------------
+
 $spacing-utilities: (
   "margin": (
     class: m,
@@ -112,5 +118,8 @@ $spacing-utilities: (
     responsive: true,
   ),
 );
+
+// Generate utilities
+// -----------------------------------------------------------------------------
 
 @include generate-utilities($spacing-utilities);

@@ -2,13 +2,13 @@
 // Utils
 // --------------------------------------------------------------------------
 
-@import "utils/a11y";
-@import "utils/colors";
-@import "utils/display";
-@import "utils/flex";
-@import "utils/grid";
-@import "utils/heights";
-@import "utils/radius";
-@import "utils/spacing";
-@import "utils/text";
-@import "utils/widths";
+@use "utils/a11y";
+@use "utils/colors";
+@use "utils/display";
+@use "utils/flex";
+@use "utils/grid";
+@use "utils/heights";
+@use "utils/radius";
+@use "utils/spacing";
+@use "utils/text";
+@use "utils/widths";

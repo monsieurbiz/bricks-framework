@@ -2,6 +2,6 @@
 // Tools
 // -----------------------------------------------------------------------------
 
-@import "tools/functions";
-@import "tools/mixins";
-@import "tools/placeholders";
+@forward "tools/functions";
+@forward "tools/mixins";
+@forward "tools/placeholders";

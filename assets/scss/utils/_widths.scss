@@ -2,6 +2,12 @@
 // Widths utilities
 // -----------------------------------------------------------------------------
 
+@use "../settings" as *;
+@use "../tools" as *;
+
+// Width properties map
+// -----------------------------------------------------------------------------
+
 $widths-utilities: (
   "width": (
     property: width,
@@ -20,5 +26,8 @@ $widths-utilities: (
     values: $max-width-map,
   ),
 );
+
+// Generate utilities
+// -----------------------------------------------------------------------------
 
 @include generate-utilities($widths-utilities);

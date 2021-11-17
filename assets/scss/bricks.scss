@@ -5,28 +5,28 @@
 // Configuration
 // -----------------------------------------------------------------------------
 
-@import "settings";
-@import "tools";
+@forward "settings";
+@forward "tools";
 
 // Elements
 // -----------------------------------------------------------------------------
 
-@import "elements";
+@use "elements";
 
 // Components
 // -----------------------------------------------------------------------------
 
-@import "components/alert";
-@import "components/button";
-@import "components/forms";
-@import "components/table";
+@use "components/alert";
+@use "components/button";
+@use "components/forms";
+@use "components/table";
 
 // Objects
 // -----------------------------------------------------------------------------
 
-@import "objects/box";
+@use "objects/box";
 
 // Utilities
 // -----------------------------------------------------------------------------
 
-@import "utils";
+@use "utils";
