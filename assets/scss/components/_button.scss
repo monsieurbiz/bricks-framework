@@ -2,57 +2,84 @@
 // Button
 // -----------------------------------------------------------------------------
 
-.btn {
+// Variables
+// -----------------------------------------------------------------------------
+
+:root {
   --btn-padding-y: var(--space-xs);
   --btn-padding-x: var(--space-md);
   --btn-color: var(--color-contrast-0);
   --btn-font-weight: var(--font-normal);
   --btn-font-size: inherit;
   --btn-background-color: var(--color-primary-500);
+  --btn-border-width: 1px;
   --btn-border-color: var(--btn-background-color);
   --btn-border-radius: var(--radius-sm);
 
+  --btn-color-hover: var(--color-contrast-0);
+  --btn-background-color-hover: var(--color-primary-700);
+  --btn-border-color-hover: var(--color-primary-700);
+
+  --btn-color-active: var(--color-contrast-0);
+  --btn-background-color-active: var(--color-primary-700);
+  --btn-border-color-active: var(--color-primary-700);
+
+  --btn-color-disabled: var(--color-contrast-0);
+  --btn-background-color-disabled: var(--color-primary-500);
+  --btn-border-color-disabled: var(--color-primary-500);
+  --btn-opacity-disabled: 0.65;
+}
+
+// Base
+// -----------------------------------------------------------------------------
+
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: var(--btn-padding-y) var(--btn-padding-x);
-  color: var(--btn-color);
-  font-weight: var(--btn-font-weight);
   font-size: var(--btn-font-size);
-  font-family: inherit;
+  font-weight: var(--btn-font-weight);
   line-height: var(--leading-tight);
-  text-decoration: none;
-  vertical-align: top;
-  background: var(--btn-background-color);
-  border: 1px solid var(--btn-border-color);
-  border-radius: var(--btn-border-radius);
+  color: var(--btn-color);
+  vertical-align: baseline;
   cursor: pointer;
+  background: var(--btn-background-color);
+  border: var(--btn-border-width) solid var(--btn-border-color);
+  border-radius: var(--btn-border-radius);
   transition: all 0.2s ease-in-out;
   transition-duration: 0.2s, 0.3s, 0.3s;
   transition-property: color, background-color, border-color;
 
-  &:focus,
+  &:focus-visible,
   &:hover {
-    --btn-background-color: var(--color-primary-700);
-
-    color: var(--btn-color);
+    --btn-color: var(--btn-color-hover);
+    --btn-background-color: var(--btn-background-color-hover);
+    --btn-border-color: var(--btn-border-color-hover);
   }
 
   &:active {
-    --btn-border-color: var(--color-primary-700);
+    --btn-color: var(--btn-color-active);
+    --btn-background-color: var(--btn-background-color-active);
+    --btn-border-color: var(--btn-border-color-active);
 
     transform: translateY(1px);
   }
 
   &[disabled] {
-    opacity: 0.65;
+    --btn-color: var(--btn-color-disabled);
+    --btn-background-color: var(--btn-background-color-disabled);
+    --btn-border-color: var(--btn-border-color-disabled);
+
     pointer-events: none;
+    opacity: var(--btn-opacity-disabled);
   }
 
   &.--loading {
     pointer-events: none;
 
     &::after {
+      content: "";
       width: 1.1em;
       height: 1.1em;
       margin: 0 0 0 var(--space-xs);
@@ -60,25 +87,29 @@
       border-top-color: var(--btn-background-color);
       border-radius: var(--radius-circle);
       animation: spin 1s ease-in-out infinite;
-      content: "";
     }
   }
 }
 
-// Reversed variant
+// Reversed and ghost variants
 // -----------------------------------------------------------------------------
 
-.btn--reversed {
-  --btn-color: var(--color-primary-500);
-  --btn-background-color: var(--color-contrast-0);
-  --btn-border-color: var(--color-primary-500);
+.btn--reversed,
+.btn--ghost {
+  color: var(--btn-background-color);
+  background-color: var(--btn-color);
+  border-color: var(--btn-background-color);
 
-  &:focus,
-  &:hover {
-    --btn-color: var(--color-primary-700);
-    --btn-background-color: var(--color-contrast-0);
-    --btn-border-color: var(--color-primary-700);
+  &:focus-visible,
+  &:hover,
+  &:active {
+    color: var(--btn-background-color-hover);
+    border-color: var(--btn-background-color-hover);
   }
+}
+
+.btn--ghost {
+  background-color: transparent;
 }
 
 // Link variant
@@ -88,15 +119,15 @@
   text-decoration: underline;
 
   &,
-  &:focus,
+  &:focus-visible,
   &:hover {
-    --btn-color: var(--color-primary-500);
-    --btn-background-color: transparent;
-    --btn-border-color: transparent;
+    color: var(--btn-background-color);
+    background-color: transparent;
+    border-color: transparent;
   }
 
-  &:focus,
+  &:focus-visible,
   &:hover {
-    --btn-color: var(--color-primary-700);
+    color: var(--btn-background-color-hover);
   }
 }
