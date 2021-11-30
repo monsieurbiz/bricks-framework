@@ -2,6 +2,12 @@
 // Colors utilities
 // -----------------------------------------------------------------------------
 
+@use "../settings" as *;
+@use "../tools" as *;
+
+// Color properties map
+// -----------------------------------------------------------------------------
+
 $colors-utilities: (
   "color": (
     property: color,
@@ -27,5 +33,8 @@ $colors-utilities: (
       ),
   ),
 );
+
+// Generate utilities
+// -----------------------------------------------------------------------------
 
 @include generate-utilities($colors-utilities);

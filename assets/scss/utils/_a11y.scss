@@ -2,6 +2,11 @@
 // A11y utilities
 // -----------------------------------------------------------------------------
 
+@use "../tools" as *;
+
+// Utility classes
+// -----------------------------------------------------------------------------
+
 .visually-hidden,
 .visually-hidden-focusable:not(:focus) {
   @extend %visually-hidden;

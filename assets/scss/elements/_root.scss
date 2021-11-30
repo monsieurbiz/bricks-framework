@@ -2,6 +2,8 @@
 // Root
 // -----------------------------------------------------------------------------
 
+@use "../settings" as *;
+
 :root {
   @each $breakpoint-name, $breakpoint-value in $breakpoint-map {
     --breakpoint-#{$breakpoint-name}: #{$breakpoint-value};

@@ -2,6 +2,12 @@
 // Heights utilities
 // -----------------------------------------------------------------------------
 
+@use "../settings" as *;
+@use "../tools" as *;
+
+// Height properties map
+// -----------------------------------------------------------------------------
+
 $heights-utilities: (
   "height": (
     property: height,
@@ -15,5 +21,8 @@ $heights-utilities: (
       ),
   ),
 );
+
+// Generate utilities
+// -----------------------------------------------------------------------------
 
 @include generate-utilities($heights-utilities);

@@ -2,6 +2,12 @@
 // Grid utilities
 // -----------------------------------------------------------------------------
 
+@use "../settings" as *;
+@use "../tools" as *;
+
+// Grid properties map
+// -----------------------------------------------------------------------------
+
 $grid-utilities: (
   "grid-template-columns": (
     property: grid-template-columns,
@@ -58,5 +64,8 @@ $grid-utilities: (
     responsive: true,
   ),
 );
+
+// Generate utilities
+// -----------------------------------------------------------------------------
 
 @include generate-utilities($grid-utilities);

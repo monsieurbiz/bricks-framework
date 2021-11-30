@@ -2,6 +2,12 @@
 // Text utilities
 // -----------------------------------------------------------------------------
 
+@use "../settings" as *;
+@use "../tools" as *;
+
+// Text properties map
+// -----------------------------------------------------------------------------
+
 $text-utilities: (
   "font-weight": (
     class: font,
@@ -76,5 +82,8 @@ $text-utilities: (
     responsive: true,
   ),
 );
+
+// Generate utilities
+// -----------------------------------------------------------------------------
 
 @include generate-utilities($text-utilities);
