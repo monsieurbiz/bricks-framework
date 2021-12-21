@@ -74,25 +74,6 @@
   }
 }
 
-// Form layout
-// -----------------------------------------------------------------------------
-
-.form-layout {
-  --form-layout-cols: 1;
-  --form-layout-gap-x: var(--space-sm);
-  --form-layout-gap-y: var(--space-md);
-
-  display: grid;
-  grid-template-columns: repeat(var(--form-layout-cols), minmax(0, 1fr));
-  gap: var(--form-layout-gap-x) var(--form-layout-gap-y);
-}
-
-@for $form-layout-cols from 1 through 4 {
-  .form-layout--cols-#{$form-layout-cols} {
-    --form-layout-cols: #{$form-layout-cols};
-  }
-}
-
 // Form field
 // -----------------------------------------------------------------------------
 
