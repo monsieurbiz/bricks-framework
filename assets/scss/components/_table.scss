@@ -2,26 +2,37 @@
 // Table
 // -----------------------------------------------------------------------------
 
-.table {
-  --table-accent-bg: transparent;
+// Variables
+// -----------------------------------------------------------------------------
 
+:root {
+  --table-background: transparent;
+  --table-border-width: 1px;
+  --table-border-color: var(--color-contrast-300);
+  --table-th-font-weight: 700;
+  --table-group-separator-color: currentColor;
+  --table-accent-background: var(--color-contrast-100);
+}
+
+// Base
+// -----------------------------------------------------------------------------
+
+.table {
   width: 100%;
   vertical-align: top;
-  background: transparent;
-  border-color: var(--color-contrast-300);
 
   tr,
   th,
   td {
-    border-color: inherit;
+    border-color: var(--table-border-color);
     border-style: solid;
     border-width: 0;
   }
 
   > :not(caption) > * > * {
     padding: var(--space-xs);
-    background-color: var(--table-accent-bg);
-    border-bottom-width: 1px;
+    background-color: var(--table-background);
+    border-bottom-width: var(--table-border-width);
   }
 
   > tbody {
@@ -32,63 +43,12 @@
     vertical-align: bottom;
   }
 
-  > :not(:last-child) > :last-child > * {
-    border-bottom-color: currentColor;
+  th {
+    font-weight: var(--table-th-font-weight);
   }
-}
 
-// Sortable
-// -----------------------------------------------------------------------------
-
-.table__sortable {
-  a {
-    position: relative;
-    display: block;
-    padding: 0 var(--space-sm) 0 0;
-
-    &::before,
-    &::after {
-      position: absolute;
-      top: calc(50% - 0.4rem);
-      right: 0;
-      width: 0.6rem;
-      height: 0.6rem;
-      background: transparent;
-      border: 1px solid var(--color-contrast-300);
-      border-width: 1px 0 0 1px;
-      transform: rotate(45deg);
-      transition: border-color 0.2s;
-      content: "";
-    }
-
-    &::after {
-      top: 50%;
-      border-width: 0 1px 1px 0;
-    }
-
-    &:focus,
-    &:hover {
-      &::before,
-      &::after {
-        border-color: var(--color-contrast-500);
-      }
-    }
-  }
-}
-
-.table__sortable--ascending {
-  a {
-    &::before {
-      border-color: var(--color-contrast-500);
-    }
-  }
-}
-
-.table__sortable--descending {
-  a {
-    &::after {
-      border-color: var(--color-contrast-500);
-    }
+  > :not(:first-child) {
+    border-top: calc(2 * var(--table-border-width)) solid var(--table-group-separator-color);
   }
 }
 
@@ -112,6 +72,10 @@
   > :not(caption) > * > * {
     border-bottom-width: 0;
   }
+
+  > :not(:first-child) {
+    border-top-width: 0;
+  }
 }
 
 // Striped variant
@@ -119,7 +83,7 @@
 
 .table--striped {
   > tbody > tr:nth-of-type(odd) {
-    --table-accent-bg: var(--color-contrast-100);
+    --table-background: var(--table-accent-background);
   }
 }
 

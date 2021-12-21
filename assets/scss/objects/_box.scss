@@ -2,17 +2,33 @@
 // Box
 // -----------------------------------------------------------------------------
 
+// Variables
+// -----------------------------------------------------------------------------
+
+:root {
+  --box-padding: var(--space-sm);
+  --box-background: var(--color-contrast-0);
+  --box-border-width: 1px;
+  --box-border-style: solid;
+  --box-border-color: var(--color-contrast-300);
+  --box-border-radius: var(--radius-sm);
+  --box-box-shadow: 0 2px 8px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+// Base
+// -----------------------------------------------------------------------------
+
 .box {
-  padding: var(--space-sm);
-  background-color: var(--color-contrast-0);
-  border-radius: var(--radius-sm);
-  box-shadow: 0 2px 8px 0 hsla(0, 0%, 0%, 0.1);
+  padding: var(--box-padding);
+  background-color: var(--box-background);
+  border-radius: var(--box-border-radius);
+  box-shadow: var(--box-box-shadow);
 }
 
 // Bordered
 // -----------------------------------------------------------------------------
 
 .box--bordered {
-  border: 1px solid var(--color-contrast-300);
+  border: var(--box-border-width) var(--box-border-style) var(--box-border-color);
   box-shadow: none;
 }
