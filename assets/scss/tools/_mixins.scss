@@ -2,6 +2,8 @@
 // Mixins
 // -----------------------------------------------------------------------------
 
+@use "sass:list";
+@use "sass:map";
 @use "../settings" as *;
 @use "functions" as *;
 
@@ -88,10 +90,7 @@
       @each $key, $utility in $utilities {
         // The utility can be disabled with `false`, thus check if the utility is a map first
         // Only proceed if responsive media queries are enabled or if it's the base media query
-        @if type-of($utility) ==
-          "map" and
-          (map-get($utility, responsive) or $prefix == "")
-        {
+        @if type-of($utility) == "map" and (map.get($utility, responsive) or $prefix == "") {
           @include generate-utilities-classes($utility, $prefix);
         }
       }
@@ -100,26 +99,26 @@
 }
 
 @mixin generate-utilities-classes($utility, $prefix) {
-  $values: map-get($utility, values);
+  $values: map.get($utility, values);
 
   // If the values are a list or string, convert it into a map
   @if type-of($values) == "string" or type-of(nth($values, 1)) != "list" {
-    $values: zip($values, $values);
+    $values: list.zip($values, $values);
   }
 
   @each $key, $value in $values {
-    $properties: map-get($utility, property);
+    $properties: map.get($utility, property);
 
     // Multiple properties are possible
     @if type-of($properties) == "string" {
-      $properties: append((), $properties);
+      $properties: list.append((), $properties);
     }
 
     // Use custom class if present
     $property-class: if(
-      map-has-key($utility, class),
-      map-get($utility, class),
-      nth($properties, 1)
+      map.has-key($utility, class),
+      map.get($utility, class),
+      list.nth($properties, 1)
     );
     $property-class: if($property-class == null, "", $property-class);
 
@@ -130,7 +129,7 @@
       ""
     );
 
-    @if $value != null {
+    @if $value {
       .#{$prefix + $property-class + $property-class-modifier} {
         @each $property in $properties {
           #{$property}: $value;

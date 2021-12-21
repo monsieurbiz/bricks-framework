@@ -2,6 +2,7 @@
 // Heights utilities
 // -----------------------------------------------------------------------------
 
+@use "sass:map";
 @use "../settings" as *;
 @use "../tools" as *;
 
@@ -13,7 +14,7 @@ $heights-utilities: (
     property: height,
     class: h,
     values:
-      map-merge(
+      map.merge(
         $height-map,
         (
           "auto": auto,

@@ -4,6 +4,7 @@
 
 @use "../settings" as *;
 
+// stylelint-disable custom-property-pattern
 :root {
   @each $breakpoint-name, $breakpoint-value in $breakpoint-map {
     --breakpoint-#{$breakpoint-name}: #{$breakpoint-value};
@@ -37,3 +38,4 @@
     --radius-#{$radius-name}: #{$radius-value};
   }
 }
+// stylelint-enable custom-property-pattern
