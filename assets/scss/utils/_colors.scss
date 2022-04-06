@@ -17,7 +17,7 @@ $colors-utilities: (
       map.merge(
         $color-map,
         (
-          "current": currentColor,
+          "current": currentcolor,
         )
       ),
   ),
@@ -28,7 +28,7 @@ $colors-utilities: (
       map.merge(
         $color-map,
         (
-          "current": currentColor,
+          "current": currentcolor,
           "transparent": transparent,
         )
       ),
