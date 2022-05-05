@@ -23,6 +23,7 @@
 
 // Prevent Mobile Safari browser to increase the default font-size
 html {
+  // stylelint-disable-next-line property-no-vendor-prefix
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
 }
