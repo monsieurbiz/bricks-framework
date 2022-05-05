@@ -26,6 +26,8 @@
   --form-control-disabled-background: var(--color-contrast-100);
   --form-control-disabled-opacity: 0.65;
 
+  --form-control-textarea-min-height: 15rem;
+
   --form-select-padding-right: var(--space-xl);
   --form-select-arrow-image-data: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='hsl(0, 0%25, 30%25)' viewBox='0 0 12 7'%3E%3Cpath d='M.67 1c0-.17.06-.34.2-.47a.67.67 0 0 1 .94 0l4 4c.1.1.27.1.38 0l4-4a.67.67 0 0 1 .95.94L6.47 6.14a.67.67 0 0 1-.94 0L.86 1.47A.67.67 0 0 1 .66 1'/%3E%3C/svg%3E%0A");
   --form-select-arrow-image-size: 1.4rem auto;
@@ -74,25 +76,6 @@
   }
 }
 
-// Form layout
-// -----------------------------------------------------------------------------
-
-.form-layout {
-  --form-layout-cols: 1;
-  --form-layout-gap-x: var(--space-sm);
-  --form-layout-gap-y: var(--space-md);
-
-  display: grid;
-  grid-template-columns: repeat(var(--form-layout-cols), minmax(0, 1fr));
-  gap: var(--form-layout-gap-x) var(--form-layout-gap-y);
-}
-
-@for $form-layout-cols from 1 through 4 {
-  .form-layout--cols-#{$form-layout-cols} {
-    --form-layout-cols: #{$form-layout-cols};
-  }
-}
-
 // Form field
 // -----------------------------------------------------------------------------
 
@@ -113,16 +96,18 @@
   vertical-align: top;
 }
 
-// Form control
+// Form control and select
 // -----------------------------------------------------------------------------
 
-.form-control {
+.form-control,
+.form-select {
+  box-sizing: border-box;
   display: block;
   width: 100%;
   padding: var(--form-control-padding-y) var(--form-control-padding-x);
-  color: var(--form-control-color);
-  font: var(--form-control-font-family);
+  font-family: var(--form-control-font-family);
   line-height: var(--form-control-line-height);
+  color: var(--form-control-color);
   background: var(--form-control-background);
   border: var(--form-control-border-width) solid var(--form-control-border-color);
   border-radius: var(--form-control-border-radius);
@@ -152,18 +137,12 @@
   }
 }
 
+/* stylelint-disable-next-line selector-no-qualifying-type */
 textarea.form-control {
-  --form-control-textarea-min-height: 15rem;
-
   min-height: var(--form-control-textarea-min-height);
 }
 
-// Form select
-// -----------------------------------------------------------------------------
-
 .form-select {
-  @extend .form-control;
-
   padding-right: var(--form-select-padding-right);
   background-image: var(--form-select-arrow-image-data);
   background-repeat: no-repeat;
@@ -194,6 +173,7 @@ textarea.form-control {
   height: var(--form-choice-input-size);
   margin-top: var(--form-choice-input-margin-top);
   vertical-align: top;
+  cursor: pointer;
   background-color: var(--form-control-background, transparent);
   background-repeat: no-repeat;
   background-position: center;
@@ -201,7 +181,6 @@ textarea.form-control {
   border: var(--form-control-border-width, 1px) solid var(--form-control-border-color, var(--color-contrast-300));
   border-radius: var(--form-choice-checkbox-radius);
   appearance: none;
-  cursor: pointer;
 
   &[type="radio"] {
     border-radius: var(--radius-full);
@@ -242,7 +221,7 @@ textarea.form-control {
     filter: none;
 
     &,
-    & ~ .form-choice__label {
+    ~ .form-choice__label {
       pointer-events: none;
       opacity: var(--form-control-disabled-opacity);
     }

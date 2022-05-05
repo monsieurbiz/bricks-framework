@@ -2,6 +2,7 @@
 // Radius utilities
 // -----------------------------------------------------------------------------
 
+@use "sass:map";
 @use "../settings" as *;
 @use "../tools" as *;
 
@@ -13,7 +14,7 @@ $radius-utilities: (
     property: border-radius,
     class: radius,
     values:
-      map-merge(
+      map.merge(
         $radius-map,
         (
           "0": 0,

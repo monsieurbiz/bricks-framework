@@ -2,6 +2,7 @@
 // Spacing
 // -----------------------------------------------------------------------------
 
+@use "sass:map";
 @use "../settings" as *;
 @use "../tools" as *;
 
@@ -13,7 +14,7 @@ $spacing-utilities: (
     class: m,
     property: margin,
     values:
-      map-merge(
+      map.merge(
         $spacing-map,
         (
           "auto": auto,
@@ -25,7 +26,7 @@ $spacing-utilities: (
     class: mt,
     property: margin-top,
     values:
-      map-merge(
+      map.merge(
         $spacing-map,
         (
           "auto": auto,
@@ -37,7 +38,7 @@ $spacing-utilities: (
     class: mr,
     property: margin-right,
     values:
-      map-merge(
+      map.merge(
         $spacing-map,
         (
           "auto": auto,
@@ -49,7 +50,7 @@ $spacing-utilities: (
     class: mb,
     property: margin-bottom,
     values:
-      map-merge(
+      map.merge(
         $spacing-map,
         (
           "auto": auto,
@@ -61,7 +62,7 @@ $spacing-utilities: (
     class: ml,
     property: margin-left,
     values:
-      map-merge(
+      map.merge(
         $spacing-map,
         (
           "auto": auto,

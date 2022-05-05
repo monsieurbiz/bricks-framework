@@ -2,6 +2,7 @@
 // Colors utilities
 // -----------------------------------------------------------------------------
 
+@use "sass:map";
 @use "../settings" as *;
 @use "../tools" as *;
 
@@ -13,10 +14,10 @@ $colors-utilities: (
     property: color,
     class: text,
     values:
-      map-merge(
+      map.merge(
         $color-map,
         (
-          "current": currentColor,
+          "current": currentcolor,
         )
       ),
   ),
@@ -24,10 +25,10 @@ $colors-utilities: (
     property: background-color,
     class: bg,
     values:
-      map-merge(
+      map.merge(
         $color-map,
         (
-          "current": currentColor,
+          "current": currentcolor,
           "transparent": transparent,
         )
       ),

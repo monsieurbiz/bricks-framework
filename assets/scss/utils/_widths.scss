@@ -2,6 +2,7 @@
 // Widths utilities
 // -----------------------------------------------------------------------------
 
+@use "sass:map";
 @use "../settings" as *;
 @use "../tools" as *;
 
@@ -13,7 +14,7 @@ $widths-utilities: (
     property: width,
     class: w,
     values:
-      map-merge(
+      map.merge(
         $width-map,
         (
           "auto": auto,

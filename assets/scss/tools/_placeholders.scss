@@ -6,11 +6,9 @@
 // -----------------------------------------------------------------------------
 
 %text-hide {
-  color: transparent;
   font: 0/0 a;
+  color: transparent;
   text-shadow: none;
-  background-color: transparent;
-  border: 0;
 }
 
 // Only display content to screen readers
@@ -24,10 +22,9 @@
   margin: -1px;
   padding: 0;
   overflow: hidden;
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
-  clip: rect(0, 0, 0, 0);
-  clip-path: inset(50%);
 }
 
 // Ellipsis
@@ -35,6 +32,6 @@
 
 %ellipsis {
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
