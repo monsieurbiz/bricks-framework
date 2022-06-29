@@ -1,0 +1,85 @@
+//
+// Borders utilities
+// -----------------------------------------------------------------------------
+
+@use "sass:map";
+@use "../settings" as *;
+@use "../tools" as *;
+
+// Borders properties map
+// -----------------------------------------------------------------------------
+
+$borders-utilities: (
+  "border-width": (
+    property: border-width,
+    class: border,
+    values: (
+      "0": 0,
+      "1": 1px,
+      "2": 2px,
+    ),
+  ),
+  "border-top-width": (
+    property: border-top-width,
+    class: border-t,
+    values: (
+      "0": 0,
+      "1": 1px,
+      "2": 2px,
+    ),
+  ),
+  "border-right-width": (
+    property: border-right-width,
+    class: border-r,
+    values: (
+      "0": 0,
+      "1": 1px,
+      "2": 2px,
+    ),
+  ),
+  "border-bottom-width": (
+    property: border-bottom-width,
+    class: border-b,
+    values: (
+      "0": 0,
+      "1": 1px,
+      "2": 2px,
+    ),
+  ),
+  "border-left-width": (
+    property: border-left-width,
+    class: border-l,
+    values: (
+      "0": 0,
+      "1": 1px,
+      "2": 2px,
+    ),
+  ),
+  "border-color": (
+    property: border-color,
+    class: border,
+    values:
+      map.merge(
+        $color-map,
+        (
+          "current": currentColor,
+        )
+      ),
+  ),
+  "border-style": (
+    property: border-style,
+    class: border,
+    values: (
+      "solid": solid,
+      "dashed": dashed,
+      "dotted": dotted,
+      "none": none,
+    ),
+    responsive: true,
+  ),
+);
+
+// Generate utilities
+// -----------------------------------------------------------------------------
+
+@include generate-utilities($borders-utilities);
