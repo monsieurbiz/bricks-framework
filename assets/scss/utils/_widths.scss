@@ -20,11 +20,13 @@ $widths-utilities: (
           "auto": auto,
         )
       ),
+    responsive: true,
   ),
   "max-width": (
     property: max-width,
     class: max-w,
     values: $max-width-map,
+    responsive: true,
   ),
 );
 
